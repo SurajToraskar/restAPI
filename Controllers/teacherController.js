@@ -10,7 +10,6 @@ exports.assignmentUpload = async (req, resp) => {
             "teacher_id": req.body.teacher_id,
             "subject_id": req.body.subject_id,
             "file_path": result.url
-
         })
         console.log(result)
         const dataSaved = await data.save();

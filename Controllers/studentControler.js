@@ -21,3 +21,16 @@ exports.studentProfile = async (req, resp) => {
       resp.status(500).send(error.message);
     }
   };
+  exports.studentList = async (req, resp) => {
+    try {
+      // Use the exec() method to return a promise and await it
+      const data = await student.findById(req.params.id);
+      // Send a JSON response with the data
+      resp.json(data);
+    } catch (err) {
+      // Handle errors
+      console.error(err);
+      // Send an error response with a status code and a message
+      resp.status(500).json({message: 'Something went wrong'});
+    }
+  };

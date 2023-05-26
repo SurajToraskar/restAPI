@@ -6,6 +6,9 @@ const studentController=require('../Controllers/studentControler');
 router.post('/',async(req,resp)=>{
     await studentController.studentProfile(req,resp);
 })
+router.get('/:id',async(req,resp)=>{
+    await studentController.studentList(req,resp);
+})
 
 
 
